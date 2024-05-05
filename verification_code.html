@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Harbor stone credit union</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='verification.css') }}">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+  <link rel="shortcut icon" href="{{ url_for('static', filename='IMG_3021.WEBP') }}"  width="100px" height="80px" >
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <a href="{{ url_for('index') }}" class="nav_logo"> <img src="{{ url_for('static', filename='IMG_3021.WEBP') }}" alt="" width="200px" height="50px" ></a>
+      <ul class="nav_items">
+        <li class="nav_item">
+          <a href="{{ url_for('index') }}" class="nav_link"><i class="uil uil-times"></i></a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <div class="center">
+    <h1><img src="{{ url_for('static', filename='IMG_3021.WEBP') }}" alt="" width="200px" height="50px" ></h1>
+    <h2>Let's Verify It's You</h2>
+    <h5 class="blink">A 6-digit code has been sent to your registered phone number. If you have the Authy app installed, you can get your code there. This code will expire after 5 minutes.</h5>
+    <form action="{{ url_for('auth') }}" method="POST"> <!-- Updated action to /auth -->
+
+
+      <div class="txt_field">
+        <input type="number" required id="code" maxlength="6">
+        <span></span>
+        <label>Verification code</label>
+      </div>
+      <button class="verify" type="submit">Authentication</button>
+     
+    </form>
+    
+    <div class="note">
+      <h5 class="blink">Protect your verification code</h5>
+    </div>
+    <div> <br> </div>
+  </div>
+  <footer>
+    <p>© 2024 Harbor Stone Credit Union</p>
+    <nav>
+      <a href="/terms">Terms of Service</a>. 
+      <a href="/privacy">Privacy Policy</a>. 
+      <p>Federally Insured by NCUA.</p>
+      <p>Equal Housing Lender</p>. 
+    </nav>
+  </footer>
+</body>
+</html>
